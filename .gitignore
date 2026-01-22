@@ -1,0 +1,48 @@
+# Büyük veri dosyaları (GitHub limiti: 100MB)
+dataset/raw/*.json
+dataset/raw/*.csv
+dataset/processed/*.csv
+*.json
+
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+venv/
+env/
+*.pyc
+
+# Node.js (Frontend)
+node_modules/
+.npm
+.cache/
+dist/
+build/
+
+# Veri setleri ve modeller (GÜVENLİK İÇİN ÖNEMLİ!)
+*.npy
+*.npz
+*.pkl
+*.bin
+*.pt
+*.pth
+models/data/*.csv
+images/
+
+# Oluşturulan dosyalar
+backend/static/generated/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# Çevre değişkenleri
+.env
+.env
+.env
