@@ -1,57 +1,44 @@
-# Fashion Recommender - AI-Powered Style Assistant
+# Fashion Recommender — Yapay Zeka Destekli Moda Asistanı
 
-Yapay zeka destekli moda önerme sistemi. Metin tabanlı arama, akıllı kombin önerileri ve sanal manken giydirme (Virtual Try-On) özellikleri içerir.
+Lisans bitirme projesi. E-ticarette ürün keşfi, kombin uyumsuzluğu ve görselleştirme 
+eksikliği sorunlarına yönelik üç modüllü yapay zeka tabanlı bir moda asistanı.
 
-## Özellikler
+## Modüller
 
-- **Akıllı Arama**: Türkçe metin girişi ile TF-IDF tabanlı anlamsal arama
-- **Renk & Mevsim Filtreleme**: Otomatik renk ailesi ve mevsim tespiti
-- **Kombin Önerileri**: Co-occurrence kuralları ve renk uyumu analizi
-- **Sanal Manken (Virtual Try-On)**: 
-  - Yisol/IDM-VTON modeli entegrasyonu
-  - Kategori bazlı akıllı giydirme (üst/alt giyim)
-  - Zincirleme giydirme (kombin oluşturma)
+**1. Akıllı Arama**  
+TF-IDF vektörizasyonu ve kosinüs benzerliği ile Türkçe metin sorgularını işler.
+74.852 ürün içinde ortalama 0.34 saniyede sonuç döner. %100 başarı oranı.
+
+**2. Kombin Önerisi**  
+68.306 gerçek kombinasyondan çıkarılan 749.640 co-occurrence kuralıyla tamamlayıcı
+ürün önerisi sunar. Kural bulunamayan durumlarda renk teorisi ve mevsim uyumu devreye girer.
+
+**3. Sanal Manken**  
+Google Gemini 3 Pro ile seçilen kombini 2K çözünürlükte bir manken üzerinde görselleştirir.
+27/27 testte başarılı, ortalama 18.4 saniye üretim süresi.
 
 ## Teknolojiler
 
-**Backend:**
-- Flask (Python Web Framework)
-- Pandas, NumPy (Veri İşleme)
-- Scikit-learn (TF-IDF Vektörizasyon)
-- Gradio Client (Hugging Face API Entegrasyonu)
-- OpenCV (Görüntü İşleme - Opsiyonel)
-
-**Frontend:**
-- React.js + Vite
-- Vanilla CSS (Responsive Tasarım)
-
-**AI Modelleri:**
-- TF-IDF (Text Search)
-- Yisol/IDM-VTON (Virtual Try-On)
-- Custom Co-occurrence Rules (Kombin Önerileri)
+**Backend:** Python, Flask, Pandas, NumPy, Scikit-learn  
+**Frontend:** React 18, Vite, Tailwind CSS  
+**AI:** TF-IDF + Kosinüs Benzerliği, Co-occurrence Analizi, Google Gemini 3 Pro  
+**Optimizasyon:** Singleton Pattern, Sparse Matrix (NPZ)  
+**Veri Seti:** Polyvore Outfit Dataset — 74.852 ürün, 749.640 kombinasyon
 
 ## Kurulum
-
-### Backend
-```bash
+# Backend
 cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install flask flask-cors pandas numpy scikit-learn gradio-client opencv-python
+source venv/bin/activate
+pip install flask flask-cors pandas numpy scikit-learn google-generativeai pillow
 python app.py
-```
 
-### Frontend
-```bash
+# Frontend
 cd frontend
 npm install
 npm run dev
-```
 
 ## Proje Hakkında
 
-Bu proje, [Mehmet Akif Ersoy Üniversitesi] [Yazılım Mühendisliği] lisans bitirme projesi kapsamında geliştirilmiştir.
-
-**Geliştirici:** [Sümeyye İsen]  
-**Danışman:** [İhsan Pençe]  
-**Yıl:** 2025-2026
+Mehmet Akif Ersoy Üniversitesi, Yazılım Mühendisliği — Bitirme Projesi  
+Geliştirici: Sümeyye İsen | Danışman: Doç. Dr. İhsan Pençe | 2025-2026
