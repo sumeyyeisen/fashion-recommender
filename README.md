@@ -7,7 +7,7 @@ eksikliği sorunlarına yönelik üç modüllü yapay zeka tabanlı bir moda asi
 
 **1. Akıllı Arama**  
 TF-IDF vektörizasyonu ve kosinüs benzerliği ile Türkçe metin sorgularını işler.
-74.852 ürün içinde ortalama 0.34 saniyede sonuç döner. %100 başarı oranı.
+74.852 ürün içinde 100 test sorgusunda ortalama 0.34 saniyede sonuç döner.
 
 **2. Kombin Önerisi**  
 68.306 gerçek kombinasyondan çıkarılan 749.640 co-occurrence kuralıyla tamamlayıcı
@@ -15,7 +15,7 @@ TF-IDF vektörizasyonu ve kosinüs benzerliği ile Türkçe metin sorgularını 
 
 **3. Sanal Manken**  
 Google Gemini 3 Pro ile seçilen kombini 2K çözünürlükte bir manken üzerinde görselleştirir.
-27/27 testte başarılı, ortalama 18.4 saniye üretim süresi.
+27 denemede hatasız görsel üretildi, ortalama üretim süresi 18.4 saniye.
 
 ## Teknolojiler
 
@@ -26,17 +26,24 @@ Google Gemini 3 Pro ile seçilen kombini 2K çözünürlükte bir manken üzerin
 **Veri Seti:** Polyvore Outfit Dataset — 74.852 ürün, 749.640 kombinasyon
 
 ## Kurulum
-# Backend
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install flask flask-cors pandas numpy scikit-learn google-generativeai pillow
-python app.py
 
-# Frontend
+### Backend
+
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install flask flask-cors python-dotenv pandas numpy scikit-learn scipy pillow google-genai
+python3 app.py
+```
+
+### Frontend
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 ## Proje Hakkında
 
