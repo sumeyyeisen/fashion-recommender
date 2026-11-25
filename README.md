@@ -3,6 +3,16 @@
 Lisans bitirme projesi. E-ticarette ürün keşfi, kombin uyumsuzluğu ve görselleştirme 
 eksikliği sorunlarına yönelik üç modüllü yapay zeka tabanlı bir moda asistanı.
 
+## Ekran Görüntüleri
+
+_Görüntüler bitirme projesi raporundan alınmıştır._
+
+![Akıllı arama](docs/arama.png)
+
+![Kombin önerisi](docs/kombin.png)
+
+![Sanal manken](docs/manken.png)
+
 ## Modüller
 
 **1. Akıllı Arama**  
