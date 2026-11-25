@@ -42,3 +42,9 @@ npm run dev
 
 Mehmet Akif Ersoy Üniversitesi, Yazılım Mühendisliği — Bitirme Projesi  
 Geliştirici: Sümeyye İsen | Danışman: Doç. Dr. İhsan Pençe | 2025-2026
+
+## API Anahtarı
+
+`backend/` klasöründe bir `.env` dosyası oluşturup Google Gemini anahtarını ekleyin:
+
+    GOOGLE_API_KEY=anahtariniz
