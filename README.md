@@ -5,13 +5,9 @@ eksikliği sorunlarına yönelik üç modüllü yapay zeka tabanlı bir moda asi
 
 ## Ekran Görüntüleri
 
-_Görüntüler bitirme projesi raporundan alınmıştır._
-
-![Akıllı arama](docs/arama.png)
-
-![Kombin önerisi](docs/kombin.png)
-
-![Sanal manken](docs/manken.png)
+| Akıllı arama | Kombin önerisi | Sanal manken |
+|:---:|:---:|:---:|
+| <img src="docs/arama.png" width="260" alt="Akıllı arama"> | <img src="docs/kombin.png" width="260" alt="Kombin önerisi"> | <img src="docs/manken.png" width="150" alt="Sanal manken"> |
 
 ## Modüller
 
