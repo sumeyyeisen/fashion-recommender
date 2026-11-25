@@ -48,9 +48,3 @@ Geliştirici: Sümeyye İsen | Danışman: Doç. Dr. İhsan Pençe | 2025-2026
 `backend/` klasöründe bir `.env` dosyası oluşturup Google Gemini anahtarını ekleyin:
 
     GOOGLE_API_KEY=anahtariniz
-
-## API Anahtarı
-
-`backend/` klasöründe bir `.env` dosyası oluşturup Google Gemini anahtarını ekleyin:
-
-    GOOGLE_API_KEY=anahtariniz
