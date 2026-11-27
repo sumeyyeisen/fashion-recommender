@@ -333,4 +333,4 @@ def serve_generated(filename): return send_from_directory(GENERATED_DIR, filenam
 def serve_models(filename): return send_from_directory(os.path.join(BASE_DIR, 'static', 'models'), filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=os.getenv("FLASK_DEBUG") == "1", port=5000)
