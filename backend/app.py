@@ -332,5 +332,40 @@ def serve_generated(filename): return send_from_directory(GENERATED_DIR, filenam
 @app.route('/static/models/<path:filename>')
 def serve_models(filename): return send_from_directory(os.path.join(BASE_DIR, 'static', 'models'), filename)
 
+# strict_slashes=False ekleyerek hem /recommend hem de /recommend/ isteklerini kabul ediyoruz
+@app.route('/recommend', methods=['POST'], strict_slashes=False)
+def get_smart_recommendation():
+    try:
+        data = request.get_json()
+        if not data:
+            return "Ürün harika bir seçim!", 200
+
+        category = str(data.get('category', '')).lower()
+        product_name = str(data.get('product_name', '')).lower()
+        
+        # Terminale log basalım ki Java'nın geldiğini görelim
+        print(f"--- [SİSTEM] Öneri İsteği Geldi: {product_name} ({category}) ---")
+
+        # 1. Senaryo: GIDA
+        if "gida" in category or "market" in category:
+            if "sucuk" in product_name:
+                advice = "Harika bir seçim! Bu sucukla nefis bir sucuklu yumurta yapabilirsin. Yanına taze köy ekmeği de eklemek ister misin?"
+            elif "makarna" in product_name:
+                advice = "Makarnanın yanına özel bir domates sosu ve kaşar peyniri harika gider!"
+            else:
+                advice = f"{product_name} yanına en uygun tamamlayıcı ürünleri senin için seçtik."
+
+        # 2. Senaryo: MODA
+        elif "moda" in category or "giyim" in category:
+            advice = f"Seçtiğin {product_name} ile harika bir kombin oluşturabiliriz! Stil modelimiz bu parça için özel ayakkabı ve aksesuar önerileri hazırladı."
+        
+        else:
+            advice = "Bu ürün sepetine çok yakıştı! Diğer fırsatlara göz atmayı unutma."
+
+        return advice # Plain text döner
+    except Exception as e:
+        print(f"❌ Öneri Hatası: {e}")
+        return "Ürün harika bir seçim, alışverişe devam et!"
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
