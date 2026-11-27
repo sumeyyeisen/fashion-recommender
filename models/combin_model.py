@@ -9,6 +9,7 @@ rules_df = None
 MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(MODEL_DIR, 'data')
 
+# Renk ve Kategori Tanımları
 KNOWN_COLORS = [
     "siyah", "beyaz", "kırmızı", "mavi", "yeşil", "sarı", "mor", 
     "pembe", "turuncu", "gri", "kahverengi", "lacivert", "bej", 
