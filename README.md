@@ -39,7 +39,8 @@ Google Gemini 3 Pro ile seçilen kombini 2K çözünürlükte bir manken üzerin
 cd backend
 python3 -m venv venv
 source venv/bin/activate
-pip install flask flask-cors python-dotenv pandas numpy scikit-learn scipy pillow google-genai
+pip install -r ../requirements.txt
+cp .env.example .env   # GOOGLE_API_KEY değerini doldurun
 python3 app.py
 ```
 
